@@ -1,7 +1,6 @@
 #!/bin/bash
 
 function checkCodeChanges() {
-    # Check if there has been a code change
     SRC_CHECKSUM_FILE=".src-checksum-$AWS_ACCOUNT_ID-$ENV-$AWS_REGION"
     touch "$SRC_CHECKSUM_FILE"
     if [ "$(cat "$SRC_CHECKSUM_FILE")" = "$(find src -exec sha1sum {} \; 2>&1 | sort -k 2 | sha1sum)" ]; then

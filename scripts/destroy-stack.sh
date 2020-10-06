@@ -12,11 +12,11 @@
 
 function main {
     ROOT_DIR=$(pwd)
-    source "$ROOT_DIR/scripts/_setup.sh"
+    source "$ROOT_DIR/scripts/steps/setup.sh"
 
     setDeploymentConfig
 
-    source "$ROOT_DIR/scripts/_terraform-steps.sh"
+    source "$ROOT_DIR/scripts/steps/terraform-steps.sh"
 
     cd "$ROOT_DIR/terraform/service"
     terraformDestroySteps "$@"
