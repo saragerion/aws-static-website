@@ -5,6 +5,9 @@
 *.tfstate
 *.tfstate.*
 
+# Terraform s3 backend config files
+terraform/config/*
+
 # Crash log files
 crash.log
 
@@ -80,7 +83,7 @@ out
 .lock-wscript
 
 # Compiled code
-dist
+src
 
 # TypeScript v1 declaration files
 typings/
@@ -88,4 +91,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# Files for distribution
+dist
 
+# Source checksum
+.src-checksum*
