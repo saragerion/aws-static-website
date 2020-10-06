@@ -82,9 +82,6 @@ out
 # node-waf configuration
 .lock-wscript
 
-# Compiled code
-src
-
 # TypeScript v1 declaration files
 typings/
 
