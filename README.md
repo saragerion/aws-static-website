@@ -6,12 +6,12 @@ The static website featured in this repository (`src` folder) is a sample used f
 
 **Technologies**
 
-- Terraform
-- AWS (S3, CloudFront, CloudWatch)
-- Bash
-- HTML
-- CSS
-- JavaScript
+- Terraform;
+- AWS (S3, CloudFront, CloudWatch);
+- Bash;
+- HTML;
+- CSS;
+- JavaScript;
 
 ## Prerequisites
 
