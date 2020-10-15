@@ -6,7 +6,6 @@ output "cloudfront_distribution" {
   value = aws_cloudfront_distribution.bucket_distribution.id
 }
 
-
 output "website_domain" {
-    value = aws_cloudfront_distribution.bucket_distribution.domain_name
+  value = aws_cloudfront_distribution.bucket_distribution.domain_name
 }

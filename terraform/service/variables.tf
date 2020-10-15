@@ -11,10 +11,10 @@ variable "env" {
 
 variable "github_repo" {
   type        = string
-  description = "The name of the current github repository, for example: saragerion/aws-static-website"
+  description = "The name of the current github repository, for example: saragerion/aws-static-website."
 }
 
 variable "owner" {
   type        = string
-  description = "The name of the owner of this website"
+  description = "The name of the owner of this website."
 }

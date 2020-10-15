@@ -4,8 +4,8 @@ resource "random_string" "resource_name_postfix" {
   upper   = false
 
   keepers = {
-      env = var.env
-      aws_account_id = local.aws_account_id
-      aws_region = var.aws_region
+    env            = var.env
+    aws_account_id = local.aws_account_id
+    aws_region     = var.aws_region
   }
 }
