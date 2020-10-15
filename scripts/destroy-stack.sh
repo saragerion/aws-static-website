@@ -23,7 +23,7 @@ function main {
     source "$ROOT_DIR/scripts/steps/frontend-assets.sh"
     emptyBucket
 
-    terraformDestroySteps "$@"
+    terraformDestroySteps
 }
 
-main "${*}"
+main

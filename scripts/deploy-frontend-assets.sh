@@ -23,7 +23,7 @@ function main {
 
     source "$ROOT_DIR/scripts/steps/frontend-assets.sh"
     cd "$ROOT_DIR" || exit
-    frontendAssetsSteps "$@"
+    frontendAssetsSteps
 }
 
-main "${*}"
+main
