@@ -11,7 +11,7 @@ resource "aws_cloudfront_distribution" "bucket_distribution" {
 
   enabled             = true
   is_ipv6_enabled     = true
-  comment             = "${local.verbose_service_name}-distribution-${local.stack_id}"
+  comment             = "${local.verbose_service_name}-distribution-${local.resource_name_postfix}"
   default_root_object = "index.html"
 
   default_cache_behavior {
@@ -70,5 +70,5 @@ resource "aws_cloudfront_distribution" "bucket_distribution" {
 }
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
-  comment = "${local.verbose_service_name}-oai-${local.stack_id}"
+  comment = "${local.verbose_service_name}-oai-${local.resource_name_postfix}"
 }

@@ -91,5 +91,8 @@ typings/
 # Files for distribution
 dist
 
-# Source checksum
+# Frontend source code checksum
 .src-checksum*
+
+# Logs
+logs

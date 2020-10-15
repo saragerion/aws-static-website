@@ -3,11 +3,18 @@
 function checkCodeChanges() {
     SRC_CHECKSUM_FILE=".src-checksum-$AWS_ACCOUNT_ID-$ENV-$AWS_REGION"
     touch "$SRC_CHECKSUM_FILE"
+
+    FILES_DEPLOYED=$(aws s3 ls "s3://$BUCKET_NAME")
+    if [ -z "${FILES_DEPLOYED}" ]; then
+        return
+    fi
+
     if [ "$(cat "$SRC_CHECKSUM_FILE")" = "$(find src -exec sha1sum {} \; 2>&1 | sort -k 2 | sha1sum)" ]; then
-        echo "====================="
+        echo -e "\n====================="
+        echo "FRONTEND CHANGES"
         echo "No change detected in the static assets, deployment not needed."
         printWebsite
-        exit 0
+        exit
     fi
 }
 
@@ -42,10 +49,16 @@ function clearCloudFrontCache() {
     fi
 }
 
+function emptyBucket() {
+    echo -e "\nEmptying bucket..."
+    aws s3 rm "s3://${BUCKET_NAME}" --recursive
+}
+
 function printWebsite() {
     if [ -n "${WEBSITE_DOMAIN}" ]; then
-        echo "====================="
-        echo "Website URL: https://${WEBSITE_DOMAIN}"
+        echo -e "\n====================="
+        echo "WEBSITE URL"
+        echo -e "https://${WEBSITE_DOMAIN}\n"
     fi
 }
 

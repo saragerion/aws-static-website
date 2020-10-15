@@ -1,7 +1,7 @@
 locals {
   service_name               = element(split("/", var.github_repo), 1)
   verbose_service_name       = "${local.service_name}-${var.env}-${var.aws_region}"
-  stack_id                   = random_string.stack_identifier.result
+  resource_name_postfix      = random_string.resource_name_postfix.result
   aws_account_id             = data.aws_caller_identity.current.account_id
   cloudfront_distribution_id = aws_cloudfront_distribution.bucket_distribution.id
 

@@ -26,4 +26,8 @@ function setDeploymentConfig() {
     getUserInput
 
     AWS_ACCOUNT_ID=$(aws sts get-caller-identity --output text --query 'Account')
+    if [ -z "$AWS_ACCOUNT_ID" ]; then
+        echo "Unable to retrieve AWS account. Are you sure your AWS cli credentials are correctly set?"
+        exit 1
+    fi
 }

@@ -1,14 +1,18 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "${local.verbose_service_name}-bucket-${local.stack_id}"
+  bucket = "${local.verbose_service_name}-bucket-${local.resource_name_postfix}"
   acl    = "private"
 
   website {
     index_document = "index.html"
   }
 
-  versioning {
-    enabled = true
-  }
+    server_side_encryption_configuration {
+        rule {
+            apply_server_side_encryption_by_default {
+                sse_algorithm     = "AES256"
+            }
+        }
+    }
 
   tags = local.tags
 }

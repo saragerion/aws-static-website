@@ -5,23 +5,23 @@
 # File ./scripts/deploy-frontend-assets.sh
 # This script deploys the frontend assets in the S3 bucket
 #
-# How to use:
+# How to use (from the project root directory):
 # - Make sure the file is executable  :   chmod +x ./scripts/deploy-frontend-assets.sh
 # - Deploy all the changes            :   ./scripts/deploy-frontend-assets.sh
 #
 
 function main {
     ROOT_DIR=$(pwd)
-    source "$ROOT_DIR/scripts/steps/setup.sh"
+    source "$ROOT_DIR/scripts/steps/common.sh"
 
     setDeploymentConfig
     introComments "apply"
 
-    source "$ROOT_DIR/scripts/steps/terraform-steps.sh"
+    source "$ROOT_DIR/scripts/steps/terraform.sh"
     cd "$ROOT_DIR/terraform/service"
     getOutputs
 
-    source "$ROOT_DIR/scripts/steps/frontend-assets-steps.sh"
+    source "$ROOT_DIR/scripts/steps/frontend-assets.sh"
     cd "$ROOT_DIR" || exit
     frontendAssetsSteps "$@"
 }
