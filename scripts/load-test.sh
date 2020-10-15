@@ -7,7 +7,7 @@
 #
 # How to use:
 # - Make sure the file is executable  :   chmod +x ./scripts/load-test.sh
-# - Append the url as parameter       :   ./scripts/oad-test.sh https://xxxxxxxxxxx.cloudfront.net/
+# - Append the url as parameter       :   ./scripts/load-test.sh https://xxxxxxxxxxx.cloudfront.net/
 #
 
 if [ -z "$1" ]; then

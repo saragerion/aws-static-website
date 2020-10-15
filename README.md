@@ -76,7 +76,7 @@ chmod +x ./scripts/destroy-stack.sh
 chmod +x ./scripts/load-test.sh
 
 # Sent HTTP requests to given url
-./scripts/oad-test.sh "https://xxxxxxxxxxx.cloudfront.net/"
+./scripts/load-test.sh "https://xxxxxxxxxxx.cloudfront.net/"
 ```
 
 
