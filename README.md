@@ -1,6 +1,7 @@
 # aws-static-website
 
-Simple static website built with Terraform, deployed to an AWS account of choice.
+Simple static website deployed to an AWS account of choice using Terraform.
+
 The static website featured in this repository (`src` folder) is a sample used for testing purposes: HTML, CSS & JavaScript are taken from this [codepen](https://codepen.io/lisilinhart/pen/MoqMQq).
 
 **Technologies**
@@ -18,7 +19,7 @@ The static website featured in this repository (`src` folder) is a sample used f
 2. The following **CLI software** installed and correctly configured in your local environment:
 - [Terraform CLI](https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform);
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html);
-3. An S3 bucket already existing and located in your AWS account, where the Terraform state will be stored remotely;
+3. An [S3 bucket](https://www.terraform.io/docs/backends/types/s3.html) already existing and located in your AWS account, where the Terraform state will be stored remotely;
 
 ## Usage
 
