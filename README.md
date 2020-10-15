@@ -28,8 +28,10 @@ The static website featured in this repository (`src` folder) is a sample used f
 ```shell script
 # Make script executable
 chmod +x ./scripts/deploy.sh
+
 # Preview a Terraform infra deployment
 ./scripts/deploy.sh
+
 # Deploy the whole stack
 ./scripts/deploy.sh apply
 ```
@@ -39,17 +41,20 @@ chmod +x ./scripts/deploy.sh
 ```shell script
 # Make script executable
 chmod +x ./scripts/deploy-frontend-assets.sh
+
 # Deploy the static assets
 ./scripts/deploy-frontend-assets.sh
 ```
 
-### Deploy the terraform infra only
+### Deploy the Terraform infrastructure only
 
 ```shell script
 # Make script executable
 chmod +x ./scripts/deploy-terraform.sh
+
 # Preview a terraform infra deployment
 ./scripts/deploy-terraform.sh
+
 # Deploy the Terraform infra
 ./scripts/deploy-terraform.sh apply
 ```
@@ -59,6 +64,7 @@ chmod +x ./scripts/deploy-terraform.sh
 ```shell script
 # Make script executable
 chmod +x ./scripts/destroy-stack.sh
+
 # Destroy all the Terraform infra (including the static frontend assets)
 ./scripts/destroy-stack.sh
 ```
@@ -68,6 +74,7 @@ chmod +x ./scripts/destroy-stack.sh
 ```shell script
 # Make script executable
 chmod +x ./scripts/load-test.sh
+
 # Sent HTTP requests to given url
 ./scripts/oad-test.sh "https://xxxxxxxxxxx.cloudfront.net/"
 ```
